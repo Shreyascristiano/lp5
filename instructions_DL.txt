@@ -1,0 +1,8 @@
+Jupyter Notebook
+Install the classic Jupyter Notebook with:
+pip install notebook
+To run the notebook:
+jupyter notebook
+Python
+3.10 set path variable
+1. Install tensorflow->pip install tensorflow
