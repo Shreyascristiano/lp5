@@ -1,0 +1,77 @@
+Steps to Set Up and Run HPC Code on Windows Using MSYS2
+1. Download MSYS2
+
+Download the latest MSYS2 installer from the official website:
+
+MSYS2 Official Website
+
+Example installer file:
+msys2-x86_64-20260322.exe
+
+2. Install MSYS2
+
+Run the downloaded installer and complete the installation using the default settings.
+
+3. Launch MSYS2
+
+Open the MSYS2 UCRT64 terminal from the Start Menu.
+
+4. Update Package Database and System
+
+Run the following command:
+
+pacman -Syu
+
+If prompted, press Y to confirm all installations and updates.
+
+5. Install GCC Compiler with OpenMP Support
+
+Execute the following command in the MSYS2 terminal:
+
+pacman -S mingw-w64-ucrt-x86_64-gcc
+
+This installs the GCC compiler along with OpenMP support for parallel programming.
+
+6. Add GCC to System PATH
+
+Copy the following directory path:
+
+C:\msys64\ucrt64\bin
+
+Then add it to the Windows Environment Variables:
+
+Right-click This PC
+Select Properties
+Click Advanced system settings
+Open Environment Variables
+Under System Variables, select Path
+Click Edit
+
+Add the copied path:
+
+C:\msys64\ucrt64\bin
+7. Verify GCC Installation
+
+Open Command Prompt (cmd) and run:
+
+g++ -fopenmp
+
+If GCC is installed correctly, the compiler should respond without showing “command not found”.
+
+8. Compile the HPC Program in VS Code
+
+Open the cloned project folder in Visual Studio Code.
+
+Run the following command in the VS Code terminal:
+
+g++ -fopenmp .\hpc\hpc_prac1.cpp -o hpc_pract1
+
+This compiles the program and generates an executable file named hpc_pract1.exe.
+
+9. Execute the Program
+
+Run the executable using:
+
+.\hpc_pract1.exe
+
+The HPC program should now execute successfully.
